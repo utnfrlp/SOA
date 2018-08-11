@@ -1,16 +1,16 @@
 # Sistemas Operativos Avanzados
 
-Código de los ejercicios de la parte práctica
+Repositorio de código de los ejercicios de la parte práctica.
 
 ## Contenido
 
-### TP1
+### TP1: S.O. Multiprocesador
 
 * desync.c: Muestra una desincronización en la ejecución con hilos.
 * peterson_a.c: Código A para analizar el algoritmo de Peterson.
 * peterson_b.c: Código B para ver fallas en el algoritmo de Peterson en la computación multiprocesamiento actual y el uso de `__sync_synchronize()`.
 
-### TP2
+### TP2: S.O. Distribuidos
 
 * ejemplo_MPI.c: Ejemplo básico de utilización de MPI.
 * ejemplo_OpenMP.c: Ejemplo básico de utilización de OpenMP.
@@ -20,4 +20,4 @@ Código de los ejercicios de la parte práctica
 
 ## Licencia
 
-Todo el código en este repositorio tiene licencia GPLv3
+Todo el código en este repositorio tiene licencia GPLv3.
