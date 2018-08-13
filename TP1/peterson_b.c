@@ -14,6 +14,7 @@ void e_peterson(int id) {
 
 	estado[id] = 1;
 	turno = other;
+	__sync_synchronize();
 	while (estado[other] && turno == other);
 }
 
@@ -62,4 +63,3 @@ int main (int argc, char *argv[]) {
 	puts("Bye from main");
 	pthread_exit(NULL);
 }
-
