@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#define NUM_ITER 5
 
 void task(long id) {
   printf("Task %ld started\n", id);
@@ -18,9 +19,8 @@ int main() {
   printf("Main started\n");
 
   long t;
-  long num_threads = 5;
 
-  for (t = 0; t < num_threads; t++) {
+  for (t = 0; t < NUM_ITER; t++) {
     task(t);
   }
 

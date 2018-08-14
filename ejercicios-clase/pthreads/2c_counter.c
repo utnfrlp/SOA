@@ -30,7 +30,7 @@ int main() {
   // initialize pthread mutex protecting "counter" global variable
   pthread_mutex_init(&counter_lock, NULL);
 
-  for (t = 0; t < NUM_THREADS; t++) {
+  for (t = 1; t <= NUM_THREADS; t++) {
     rc = pthread_create(&thread[t], NULL, count, (void *) t);
     if (rc) {
       printf("ERROR: return code from pthread_create() is %ld\n", rc);

@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #define NUM_COUNTS 1000
 
-long counter;
+long counter = 0;
 
 void count() {
   long i;
 
-  for (i = 0; i < NUM_COUNTS; i++) {
+  for (i = 1; i <= NUM_COUNTS; i++) {
     counter += i;
   }
 }

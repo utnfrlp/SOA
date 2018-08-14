@@ -23,7 +23,6 @@ int main() {
 
   long t;
   pthread_t thread[NUM_THREADS];
-  void *status[NUM_THREADS];
   long rc;
 
   for (t = 0; t < NUM_THREADS; t++) {
@@ -38,7 +37,7 @@ int main() {
   // block until all threads complete
   for (t = 0; t < NUM_THREADS; t++) {
     printf("Joining thread %ld\n", t);
-    rc = pthread_join(thread[t], &status[t]);
+    rc = pthread_join(thread[t], NULL);
   }
 
   printf("Main completed\n");

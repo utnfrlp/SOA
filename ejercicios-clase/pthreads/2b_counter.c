@@ -21,7 +21,7 @@ int main() {
   pthread_t thread[NUM_THREADS];
   long rc;
 
-  for (t = 0; t < NUM_THREADS; t++) {
+  for (t = 1; t <= NUM_THREADS; t++) {
     rc = pthread_create(&thread[t], NULL, count, (void *) t);
     if (rc) {
       printf("ERROR: return code from pthread_create() is %ld\n", rc);
