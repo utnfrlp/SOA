@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
-#define COUNTER_DONE  10
+#define COUNTER_DONE 10
 #define COUNTER_HALT1 3
 #define COUNTER_HALT2 6
 
@@ -35,7 +35,7 @@ void *functionCount2() {
    while (counter < COUNTER_DONE) {
       pthread_mutex_lock(&counter_lock);
 
-      if (counte < COUNTER_HALT1 || counter > COUNTER_HALT2) {
+      if (counter < COUNTER_HALT1 || counter > COUNTER_HALT2) {
         // Condition of if statement has been met.
         // Signal to free waiting thread by freeing the mutex.
         // Note: functionCount1() is now permitted to modify "counter".

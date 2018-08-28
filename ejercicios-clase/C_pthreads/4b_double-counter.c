@@ -31,10 +31,10 @@ void *functionDec() {
     pthread_mutex_lock(&counter_2_lock);
     printf("DEC: Lock counter_2_lock\n");
 
-
     // this new approach is non-blocking, while common lock is blocking
     while (pthread_mutex_trylock(&counter_1_lock)) {
       pthread_mutex_unlock(&counter_2_lock);
+      // give functionInc the possibility to lock counter_2_lock
       pthread_mutex_lock(&counter_2_lock);
     }
     // pthread_mutex_lock(&counter_1_lock);
