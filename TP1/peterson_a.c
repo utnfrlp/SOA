@@ -1,8 +1,10 @@
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 #define NUM_THREADS	 2
 #define MAX_COUNT 100000000L
+
 
 volatile long count = 0;
 
@@ -36,8 +38,8 @@ int main (int argc, char *argv[]) {
 
 	float error = (MAX_COUNT-count)/(float) MAX_COUNT *100;
 
-	printf("Final result: %ld Expected: %ld Error: %3.2f%%\n", count, MAX_COUNT, error);
+	printf("Final value: %ld Expected: %ld Error: %3.2f%%\n", count, MAX_COUNT, error);
 
-	puts("Bye from main");
+	printf("Bye from main");
 	pthread_exit(NULL);
 }
