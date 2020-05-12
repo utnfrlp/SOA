@@ -53,11 +53,14 @@ void *count(void *ptr) {
 
     for (i=0; i < max; i++) {
         lock(tid);
+
         counter += 1;
+        // printf("Atiende proceso %d, turno actual: %d\n", tid, counter);
+
         unlock(tid);
     }
 
-    printf("End %d counter: %d\n", tid, counter);
+    printf("Termina proceso %d, contador: %d\n", tid, counter);
     return 0;
 }
 
@@ -77,8 +80,8 @@ int main (int argc, char *argv[]) {
 
     float error = (MAX_COUNT-counter)/(float) MAX_COUNT *100;
 
-	printf("Final value: %d Expected: %d Diff: %d Error: %3.2f%%\n", counter, MAX_COUNT, counter-MAX_COUNT, error);
+	printf("Valor final: %d, Valor esperado: %d, Diferencia: %d, Error: %3.2f%%\n", counter, MAX_COUNT, counter-MAX_COUNT, error);
     
-    printf("Bye from main");
+    printf("Termina principal");
     pthread_exit(NULL);
 }
